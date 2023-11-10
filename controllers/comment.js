@@ -1,4 +1,4 @@
-const Book = require("../models/book");
+const Comment = require("../models/comment");
 
 const get = (req, res) => {
   Book.find()

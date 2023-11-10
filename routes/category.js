@@ -1,6 +1,8 @@
 const express = require("express")
 const router = express.Router()
-const categoryController = require("../controllers/category")
+const bookController = require("../controllers/category")
 
-router.post("/",categoryController.add)
+router.get("/",bookController.get)
+router.post("/",bookController.add)
+
 module.exports =router

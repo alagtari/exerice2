@@ -1,9 +1,9 @@
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
-const bookRoutes =require("./routes/book")
-const authorRoutes =require("./routes/author")
-const categoryRoutes =require("./routes/category")
+const authRoutes =require("./routes/auth") 
+const bookRoutes =require("./routes/book") 
+const categoryRoutes =require("./routes/category") 
 const MONGODB_URI = "mongodb://127.0.0.1:27017/Books";
 mongoose.connect(MONGODB_URI, {
   useNewUrlParser: true,
@@ -32,7 +32,8 @@ app.use((req, res, next) => {
   );
   next();
 });
+app.use("/api/auth",authRoutes)
 app.use("/api/book",bookRoutes)
-app.use("/api/author",authorRoutes)
 app.use("/api/category",categoryRoutes)
+
 module.exports =app

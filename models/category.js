@@ -16,6 +16,10 @@ const categorySchema = mongoose.Schema({
       "Drama",
     ],
     required: true,
+    index: {
+      unique: true,
+      dropDups: true
+    }
   },
 });
 
